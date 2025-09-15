@@ -1,5 +1,9 @@
 import pytest
 from utils.helpers import get_user, create_post
+import sys
+import os
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 
 def test_get_user():
     response = get_user(1)

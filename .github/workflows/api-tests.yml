@@ -13,9 +13,9 @@ jobs:
         run: pip install -r requirements.txt
       - name: Run tests
         # Запускайте pytest из корневой директории проекта
-        run: pytest
+        run: pytest tests/
       - name: Generate HTML report
-        run: pytest --html=report.html
+        run: pytest tests/ --html=report.html
       - name: Upload report
         uses: actions/upload-artifact@v4
         with:
