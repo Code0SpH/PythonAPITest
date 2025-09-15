@@ -12,10 +12,10 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
       - name: Run tests
-        # Запускаем pytest из корневой директории проекта
-        run: pytest tests/
+        # Запускайте pytest из корневой директории проекта
+        run: pytest
       - name: Generate HTML report
-        run: pytest tests/ --html=report.html
+        run: pytest --html=report.html
       - name: Upload report
         uses: actions/upload-artifact@v4
         with:
