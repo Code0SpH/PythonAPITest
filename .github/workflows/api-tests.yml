@@ -12,8 +12,11 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
       - name: Run tests
-        # Запускайте pytest из корневой директории проекта
-        run: pytest tests/
+        run: pytest tests/ --alluredir=./allure-results
+      - name: Generate Allure report
+        run: |
+          pip install allure
+          allure generate allure-results -o allure-report --clean
       - name: Generate HTML report
         run: pytest tests/ --html=report.html
       - name: Upload report
