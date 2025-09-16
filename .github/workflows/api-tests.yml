@@ -16,7 +16,7 @@ jobs:
 
     - name: Install dependencies
       run: |
-        pip install requirements.txt
+        pip install requirements.txt -r
 
     - name: Install Allure
       run: |
