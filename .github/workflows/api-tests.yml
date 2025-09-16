@@ -16,7 +16,7 @@ jobs:
 
     - name: Install dependencies
       run: |
-        pip install pytest allure-pytest
+        pip install requirements.txt
 
     - name: Install Allure
       run: |
