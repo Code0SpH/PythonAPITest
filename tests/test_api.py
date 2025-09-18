@@ -8,6 +8,7 @@ def test_get_user():
     assert response.json()["id"] == 1
     assert "@april.biz" in response.json()["email"]
 
+
 def test_get_post():
     response = requests.get("https://jsonplaceholder.typicode.com/posts/1")
     assert response.status_code == 200
