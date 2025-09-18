@@ -35,6 +35,7 @@ def test_create_albums():
     assert response.json()["title"] == "always title"
     assert response.json()["userId"] == 1
 
+
 def test_create_comments():
     payload = {"postId": 101, "id": "501", "name": "always name"}
     response = requests.post("https://jsonplaceholder.typicode.com/comments", json=payload)
