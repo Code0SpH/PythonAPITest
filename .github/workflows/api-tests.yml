@@ -10,20 +10,11 @@ jobs:
     - name: Run tests in Docker
       run: docker run api-tests
     - uses: actions/checkout@v4
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.13'
-    - name: Install dependencies
-      run: |
-        pip install -r requirements.txt
     - name: Install Allure
       run: |
         wget https://github.com/allure-framework/allure2/releases/download/2.29.0/allure-2.29.0.zip
         unzip allure-2.29.0.zip
         echo "$PWD/allure-2.29.0/bin" >> $GITHUB_PATH
-    - name: Run tests
-      run: pytest tests/ --alluredir=./allure-results
     - name: Generate Allure report
       run: allure generate allure-results -o allure-report --clean
     - name: Upload report
